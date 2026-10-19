@@ -1,0 +1,4 @@
+import { request } from './api';
+const STAGES=['Order placed','Processing','Shipped','Out for delivery','Delivered'];
+export function orderStatus(order){return {stage:Math.max(0,STAGES.indexOf(order.status)),label:order.status,stages:STAGES};}
+const orderService={quote:async(order)=>(await request('/orders/quote',{method:'POST',body:order})).quote,list:async()=>(await request('/orders')).orders,get:async(number)=>{try{return (await request('/orders/'+encodeURIComponent(number))).order;}catch(e){if([401,404].includes(e.status))return null;throw e;}},track:async(number,email)=>{const o=await orderService.get(number.trim());return o&&o.contact.email.toLowerCase()===email.trim().toLowerCase()?o:null;},place:async(order)=>(await request('/orders',{method:'POST',body:order})).order};export default orderService;

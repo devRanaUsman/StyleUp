@@ -1,0 +1,121 @@
+/* ==========================================================================
+   STYLEUP DESIGN TOKENS
+   Warm paper, ink and brass. Every colour, size and motion value lives here.
+   ========================================================================== */
+:root {
+  /* Core palette */
+  --ink: #151515;
+  --ink-2: #4f4b45;
+  --paper: #faf9f6;
+  --surface: #ffffff;
+  --sand: #e9decd;
+  --sand-deep: #ddcdb4;
+  --brass: #b08d4f;
+  --brass-soft: #f3e9d8;
+
+  /* Brand aliases — kept so older components inherit the new palette */
+  --green: #151515;
+  --green-dark: #0c0c0c;
+  --green-soft: #f0ece4;
+  --cream: #faf9f6;
+  --beige: #f2efe9;
+  --beige-light: #eae5db;
+  --blush: #efe2d1;
+  --blush-pale: #f7f2e9;
+  --text: #151515;
+  --text-2: #6c6862;
+  --text-3: #9a958c;
+  --border: #ebe7e0;
+  --border-strong: #dcd6cc;
+  --white: #ffffff;
+  --sale: #d13a2f;
+  --sale-soft: #fbeae7;
+  --success: #2f7355;
+  --success-soft: #e9f2ec;
+  --warning: #a97812;
+  --warning-soft: #fbf2dd;
+  --focus: #151515;
+
+  /* Type */
+  --font-display: var(--font-display), "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --font-sans: var(--font-body), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-serif: var(--font-display), "Plus Jakarta Sans", Georgia, serif;
+  --fs-h1: clamp(2.25rem, 1.35rem + 3.1vw, 4.1rem);
+  --fs-h2: clamp(1.5rem, 1.2rem + 1.1vw, 2.15rem);
+  --fs-h3: clamp(1.2rem, 1.05rem + 0.5vw, 1.5rem);
+  --fs-h4: 1.0625rem;
+  --fs-body: 1rem;
+  --fs-body-lg: 1.0625rem;
+  --fs-sm: 0.875rem;
+  --fs-xs: 0.75rem;
+  --fs-eyebrow: 0.6875rem;
+  --lh-tight: 1.06;
+  --lh-snug: 1.28;
+  --lh-body: 1.65;
+
+  /* Spacing (4/8 scale) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-7: 28px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+  --s-24: 96px;
+
+  /* Layout */
+  --container: 1360px;
+  --gutter: 18px;
+  --topbar-h: 34px;
+  --header-h: 82px;
+  --nav-h: 50px;
+  --chrome-h: var(--header-h);
+  --bottomnav-h: 62px;
+
+  /* Radius */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+  --r-pill: 999px;
+
+  /* Shadow — quiet and warm */
+  --shadow-sm: 0 1px 2px rgba(21, 21, 21, 0.04);
+  --shadow-md: 0 8px 26px -14px rgba(21, 21, 21, 0.18);
+  --shadow-lg: 0 24px 60px -30px rgba(21, 21, 21, 0.32);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.75, 0.2, 1);
+  --t-fast: 150ms;
+  --t-base: 220ms;
+  --t-slow: 340ms;
+
+  /* Z */
+  --z-sticky: 40;
+  --z-drawer: 60;
+  --z-modal: 70;
+  --z-toast: 80;
+
+  /* Safe areas */
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-t: env(safe-area-inset-top, 0px);
+}
+
+@media (min-width: 768px) {
+  :root { --gutter: 32px; --header-h: 88px; --nav-h: 52px; }
+}
+@media (min-width: 1024px) {
+  :root { --chrome-h: calc(var(--header-h) + var(--nav-h)); }
+}
+@media (min-width: 1280px) {
+  :root { --gutter: 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --t-fast: 0ms; --t-base: 0ms; --t-slow: 0ms; }
+}

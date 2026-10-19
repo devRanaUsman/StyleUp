@@ -1,0 +1,1 @@
+import { Link } from '@/components/navigation';export default function GiftCards(){return <div className="container page"><h1 className="h1">Gift cards</h1><p>Gift card purchases are not currently available. Please check back once online payments launch.</p><Link to="/shop" className="btn btn--primary">Continue shopping</Link></div>;}

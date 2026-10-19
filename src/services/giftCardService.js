@@ -1,0 +1,1 @@
+import {request} from './api';export default {create:payload=>request('/gift-cards',{method:'POST',body:payload})};

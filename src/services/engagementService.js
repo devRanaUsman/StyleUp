@@ -1,0 +1,1 @@
+import { request } from './api';export default {contact:p=>request('/contact',{method:'POST',body:{...p,subject:p.topic,orderNumber:p.order}}),notifyAvailability:p=>request('/notify',{method:'POST',body:p}),review:p=>request('/reviews',{method:'POST',body:p})};

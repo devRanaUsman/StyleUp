@@ -1,0 +1,3 @@
+import { configureStore } from '@reduxjs/toolkit';
+import cartSlice from './cartSlice';import wishlistSlice from './wishlistSlice';import authSlice from './authSlice';import uiSlice from './uiSlice';
+export function makeStore(user){return configureStore({reducer:{cart:cartSlice.reducer,wishlist:wishlistSlice.reducer,auth:authSlice.reducer,ui:uiSlice.reducer},preloadedState:{auth:{user,isAuthenticated:!!user,loading:false},wishlist:{ids:user?.wishlist||[]}}});}

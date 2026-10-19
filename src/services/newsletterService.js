@@ -1,0 +1,1 @@
+import {request} from './api';export const subscribe=email=>request('/subscribe',{method:'POST',body:{email}});
