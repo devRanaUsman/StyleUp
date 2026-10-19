@@ -9,7 +9,7 @@ for (const width of [1440, 390]) {
   });
   const page = await ctx.newPage();
   for (const entry of pages) {
-    const [name, path] = entry.split('=');
+    const [name, path] = entry.split('|');
     try {
       await page.goto('http://localhost:3000' + path, { waitUntil: 'load', timeout: 60000 });
       await page.waitForTimeout(1500);
